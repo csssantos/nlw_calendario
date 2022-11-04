@@ -47,13 +47,13 @@ $(".colors").find("div").each(function() {
         var color = $(this).attr("class");
         var select = $(this).attr("select", true);
         var cards = $('#cards').html(); 
-        var header = $(this).attr("data-header") ? $(this).attr("data-header") + '.svg' : 'header.svg';
+        var header = $(this).attr("data-header") ? $(this).attr("data-header") : 'header';
 
         $(".colors").find("div").removeAttr("select");
         $(this).attr("select", true);
         $("body").removeAttr("class").addClass(color);
         $("#cards").html(cards);
-        $("header img").attr("src", './assets/img/'+header).attr("style", "width: 9rem;");
+        $("header img").attr("src", './assets/img/'+header+'.svg').attr("style", "width: 9rem;");
 
         localStorage.setItem('color', `${color}`);
         localStorage.setItem('header', `${header}`);
@@ -64,12 +64,12 @@ $(".colors").find("div").each(function() {
 $(document).ready(function() {
     var color = localStorage.getItem('color');
     var header = localStorage.getItem('header');
-    var headImg = header ? header + '.svg' : 'header.svg';
+    var headImg = header ? ''+header+'' : 'header';
 
     $(".colors").find("div[class='yellow']").attr("select", true);
     $("body").removeAttr("class").addClass(color);
-    $("header img").attr("src", './assets/img/'+headImg).attr("style", "width: 9rem;");
-
+    $("header img").attr("src", './assets/img/'+headImg+'.svg').attr("style", "width: 9rem;");
+    
     if(color == color) {
         $(".colors").find("div").removeAttr("select");
         $(".colors").find("div[class='"+color+"']").attr("select", true)
