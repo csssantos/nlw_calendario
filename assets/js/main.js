@@ -74,12 +74,4 @@ $(document).ready(function() {
         $(".colors").find("div").removeAttr("select");
         $(".colors").find("div[class='"+color+"']").attr("select", true)
     }
-});
-
-$('#team').on('change',function(){
-    var select = $(this);
-    var team = select.val();
-    if(team == team) {
-        $("body").attr("style", "background-image: url('assets/img/flags/"+team+".png')")
-    }
-});
+})
