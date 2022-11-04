@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: url(../img/bg_yellow.svg);
+    --filter: url();
+    --color-border: #f7dd43;
+    --color-border-header: #caac00;
+    --bg-card: #2e2d1b;
+}
+
+body.red {
+    --bg: url(../img/bg_red.svg);
+    --color-text: ;
+    --color-border: #f74343;
+    --color-border-header: #ca0000;
+    --bg-card: #2e1b1b;
+}
+
+body.blue {
+    --bg: url(../img/bg_blue.svg);
+    --color-border: #4f43f7;
+    --color-border-header: #0300ca;
+    --bg-card: #1b1b2e;
+}
+
+body.green {
+    --bg: url(../img/bg_green.svg);
+    --color-border: #49f743;
+    --color-border-header: #07ca00;
+    --bg-card: #1b2e1b;
+}
+
+
+.selectColor .colors {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 10px;
+    top: 10px;
+    left: 10px;
+    height: 100%;
+}
+
+.selectColor .colors div {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.selectColor .colors div[select] {
+    border: 2px solid white;
+}
+
+.selectColor .colors div {
+    background-color: #f7dd43;
+}
+
+.selectColor .colors div.blue {
+    background-color: #4f43f7;
+}
+
+.selectColor .colors div.green {
+    background-color: #49f743;
+}
+
+.selectColor .colors div.red {
+    background-color: #f74343;
+}
+
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: #121214;
+    background-image: var(--bg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body,
+body .card,
+body .card h2 {
+    transition: background 0.5s ease, border-bottom 0.5s ease;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+}
+
+#app {
+    width: fit-content;
+    margin: 52px auto;
+}
+
+#app header {
+    margin-bottom: 63px;
+    text-align: center;
+}
+
+#app .card {
+    padding: 32px 23px;
+    text-align: center;
+    gap: 16px;
+    border-radius: 6px;
+    border-bottom: 2px solid var(--color-border);
+    background-color: var(--bg-card);
+}
+
+
+#app #cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#app .card h2 {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border-header);
+    border-radius: 6px;
+    width: fit-content;
+    margin-inline: auto;
+    align-items: center;
+    color: var(--color-border);
+    margin-bottom: 50px;
+}
+
+#app .card h2 span {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #e1e1e6
+}
+
+#app .card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 270px;
+
+}
+
+#app .card ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#app .card ul li+li {
+    padding-top: 24px;
+    border-top: 1px solid #323238;
+}
+
+#app .card ul li strong {
+    color: #e1e1e6;
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 125%;
+}
+
+
+#app .card h2:hover,
+#app .card ul li strong:hover,
+#app .card ul li img:hover {
+    transform: scale(1.1)
+}
+
+#app .card h2,
+#app .card ul li strong,
+#app .card ul li img {
+    transition: transform 0.3s;
+}
+
+#app .card {
+    opacity: 0;
+    animation: appear 0.8s forwards;
+}
+
+
+
+@media (min-width: 1024px) {
+    #cards {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr;
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: fit-content;
+    }
+} 
+
+@keyframes appear {
+    0% {
+        transform: translateX(150px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
