@@ -66,25 +66,25 @@ body.catar {
 }
 
 .selectColor .colors div {
-    background-color: #f7dd43;
+    background-image: url(../img/bg_yellow.svg);
+    background-size: cover;
+    background-position: center;
 }
 
 .selectColor .colors div.blue {
-    background-color: #4f43f7;
+    background-image: url(../img/bg_blue.svg);
 }
 
 .selectColor .colors div.green {
-    background-color: #49f743;
+    background-image: url(../img/bg_green.svg);
 }
 
 .selectColor .colors div.red {
-    background-color: #f74343;
+    background-image: url(../img/bg_red.svg);
 }
 
 .selectColor .colors div.catar {
     background-image: url(../img/catarbg.png);
-    background-size: cover;
-    background-position: center;
 }
 
 ul {
@@ -115,7 +115,7 @@ body * {
 }
 
 #app header {
-    margin-bottom: 63px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
@@ -200,7 +200,32 @@ body * {
     animation: appear 0.8s forwards;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
 
+select {
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid var(--color-border-header);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    font-weight: bold;
+}
+
+select:focus{
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+
+select option {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--color-border-header);
+}
 
 @media (min-width: 1024px) {
     #cards {
