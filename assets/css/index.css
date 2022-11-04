@@ -36,6 +36,12 @@ body.green {
     --bg-card: #1b2e1b;
 }
 
+body.catar {
+    --bg: url(../img/catarbg.png);
+    --color-border: #f74388;
+    --color-border-header: #ca009e;
+    --bg-card: #712b779c;
+}
 
 .selectColor .colors {
     position: fixed;
@@ -75,6 +81,11 @@ body.green {
     background-color: #f74343;
 }
 
+.selectColor .colors div.catar {
+    background-image: url(../img/catarbg.png);
+    background-size: cover;
+    background-position: center;
+}
 
 ul {
     list-style: none;
@@ -91,7 +102,7 @@ body {
 body,
 body .card,
 body .card h2 {
-    transition: background 0.5s ease, border-bottom 0.5s ease;
+    transition: background 0.5s ease-in-out, border-bottom 0.5s ease;
 }
 
 body * {

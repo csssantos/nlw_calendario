@@ -45,20 +45,31 @@ document.querySelector("#cards").innerHTML =
 $(".colors").find("div").each(function() {
     $(this).on("click", function() {
         var color = $(this).attr("class");
+        var select = $(this).attr("select", true);
+        var cards = $('#cards').html(); 
+        var header = $(this).attr("data-header") ? $(this).attr("data-header") + '.svg' : 'header.svg';
+
         $(".colors").find("div").removeAttr("select");
         $(this).attr("select", true);
         $("body").removeAttr("class").addClass(color);
-        var select = $(this).attr("select", true);
-        localStorage.setItem('color', `${color}`);
-        var cards = $('#cards').html(); 
         $("#cards").html(cards);
+        $("header img").attr("src", './assets/img/'+header).attr("style", "width: 9rem;");
+
+        localStorage.setItem('color', `${color}`);
+        localStorage.setItem('header', `${header}`);
+
     })
 });
 
 $(document).ready(function() {
-    $(".colors").find("div[class='yellow']").attr("select", true);
     var color = localStorage.getItem('color');
+    var header = localStorage.getItem('header');
+    var headImg = header ? header + '.svg' : 'header.svg';
+
+    $(".colors").find("div[class='yellow']").attr("select", true);
     $("body").removeAttr("class").addClass(color);
+    $("header img").attr("src", './assets/img/'+headImg).attr("style", "width: 9rem;");
+
     if(color == color) {
         $(".colors").find("div").removeAttr("select");
         $(".colors").find("div[class='"+color+"']").attr("select", true)
